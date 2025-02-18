@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Your Name</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .name-input {
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="name-input">
+    <h1>Enter Your Name</h1>
+    <input type="text" id="playerName" placeholder="Your Name">
+    <button id="playButton">Play</button>
+  </div>
+
+  <script>
+    document.getElementById('playButton').addEventListener('click', () => {
+      const playerName = document.getElementById('playerName').value;
+      if (playerName.trim()) {
+        localStorage.setItem('playerName', playerName); // Store name in localStorage
+        window.location.href = 'game.html'; // Redirect to the game page
+      } else {
+        alert('Please enter your name!');
+      }
+    });
+  </script>
+</body>
+</html>￼Enter
